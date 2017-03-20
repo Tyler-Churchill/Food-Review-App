@@ -1,0 +1,107 @@
+<!-- images used taken from pixabay.com (under permission) -->
+<!-- uses materialize css, jquery, jquery mobile, store.js -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css"/>
+            <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+     	<link type="text/css" rel="stylesheet" href="css/layout.css"/>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Food Review</title>
+    </head>
+    <body>
+        <div class="fixed-action-btn vertical click-to-toggle">
+            <a class="btn-floating btn-large red">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul>
+              <li><a href="#new"class="btn-floating green"><i class="material-icons">note_add</i></a></li>
+              <li><a href="#catalog"class="btn-floating blue"><i class="material-icons">dashboard</i></a></li>
+              <li><a href="#info"class="btn-floating deep-purple"><i class="material-icons">info_outline</i></a></li>
+            </ul>
+        </div> <!-- nav -->
+    	<div data-role="page" id="catalog">
+    		<div class="container" id="entries">
+    		</div>
+    	</div> <!-- end catalog page -->
+    	<div data-role="page" id="new">
+    		<div class="container">
+                <label for="name">Dish Name</label>
+                <input placeholder="Ex) Ramen" id="name" type="text" class="validate">
+                <div id="photo">
+                    <div id="take-photo">
+                      <a class="waves-effect waves-light red btn"><i class="material-icons right">videocam</i>Take Photo</a>
+                    </div>
+                </div> <!-- end upload photo section -->
+                <label>Restaurant (showing nearby)</label>
+                <select id="loc"></select>
+                <div id="review-stars"> 
+                    <select id="rating">
+                      <option value="" disabled selected>Choose a rating</option>
+                      <option value="1">It's bad</option>
+                      <option value="2">Not my favorite</option>
+                      <option value="3">It's acceptable</option>
+                      <option value="4">It was good!</option>
+                      <option value="5">Absolutely amazing!</option>
+                    </select>
+                </div> <!-- end stars section -->
+
+                <div id="notes">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" class="materialize-textarea" placeholder="Add some notes!"></textarea>
+                </div>
+                <div id="save-entry">
+                    <a class="waves-effect waves-light btn green" id="save">Save</a>
+                </div>
+    		</div>
+    	</div> <!-- end add new page -->
+    	<div data-role="page" id="view">
+    		<div class="container">
+              <div class="card">
+                <div class="card-image" id="dish-image">
+                </div>
+                <div class="card-content">
+                    <div id="dish-rating">
+                    </div> 
+                    <div id="dish-location">
+                    </div> 
+                    <div id="dish-notes">
+                    </div>
+                </div>
+              </div>
+            </div>
+    	</div> <!-- end view entry -->
+        <div id="info" class="modal">
+            <div class="modal-content">
+              <h5>Creating a new review</h5>
+              <p>Catalog your food reviews by creating a new review entry by clicking the "+" in the nabigation menu. Add a photo of the dish, your rating, and notes about your experience.</p> 
+              <h5>Accessing your new review</h5>
+              <p>Once you save your review entry, you can find it in your catalog by clicking the "grid" in the navigation menu.</p>
+              <h5>Delete your new review</h5>
+              <p>You can delete existing reviews in your catalog by clicking on a review entry, and then clicking the "trashcan" delete icon.</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Got it!</a>
+            </div>
+        </div>
+         <div id="error" class="modal">
+                <div id="message" class="modal-content">
+                 
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
+                </div>
+        </div>
+        <div id="map"></div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/store.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIxQ9tS4xBNKzGUuc4F1dUqf7_OY39sec&libraries=places"></script>
+        <script type="text/javascript" src="js/layout.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>
